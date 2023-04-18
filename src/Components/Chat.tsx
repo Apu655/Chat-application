@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import ScrollToBottom from "react-scroll-to-bottom";
 type Props = {};
 
 const Chat = ({ socket, username, room }: any) => {
@@ -32,7 +32,7 @@ const Chat = ({ socket, username, room }: any) => {
   }, [socket]);
   return (
     <div className="chat-app">
-      <div className="chat-box">
+      <ScrollToBottom className="chat-box">
         <div className="chat-header">
           <p>Live Chat</p>
         </div>
@@ -51,7 +51,7 @@ const Chat = ({ socket, username, room }: any) => {
             );
           })}
         </div>
-      </div>
+      </ScrollToBottom>
       <div className="chat-footer">
         <form className="footer-form" onSubmit={sendMessage}>
           <input
